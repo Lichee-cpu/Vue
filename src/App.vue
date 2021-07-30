@@ -2,8 +2,7 @@
   <div id="app">
     <h2>Add Todo </h2>
     <Addtodo v-on:add-todo="addtodo"/>
-    
-    <Todos v-bind:todos="todos"/>
+    <Todos v-bind:todos="todos" v-on:delete-todo="deleteTodo"/>
   </div>
 </template>
 
@@ -35,6 +34,9 @@ data(){
 methods:{
   addtodo(todo){
     this.todos.unshift(todo)
+  },
+  deleteTodo(id){
+    this.todos = this.todos.filter(todo=>todo.id !== id)
   }
 }   
 }

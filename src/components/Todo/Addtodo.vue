@@ -6,7 +6,7 @@
     </form>
 </template>
 <script>
-import uuid from "uuid"
+// import uuid from "uuid"
 
 export default {
     name:"Addtodo",
@@ -18,7 +18,7 @@ export default {
     methods:{
         submit(){
             const todo={
-                id:uuid,
+                id:Date.parse(new Date()),
                 title:this.title,
                 completed:false
             };

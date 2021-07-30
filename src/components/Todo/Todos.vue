@@ -6,6 +6,7 @@
         v-bind:class="{'is-complete':todo.completed}"
         >
         <input type="checkbox" @click="todo.completed=!todo.completed">
+        <button @click="$emit('delete-todo',todo.id)"> 删除 </button>
             {{todo.title}}
         </div>
     </div>
@@ -28,5 +29,8 @@ props:["todos"]
 }
 .is-complete{
     text-decoration: line-through;
+}
+button{
+    cursor: pointer;
 }
 </style>
